@@ -450,7 +450,7 @@ require '../config.php';
 	<div class="clearfix"></div>
 
 	<div class="container font14" style="margin-top: -10px;">
-		<hr size="3" align="center" width="100%">
+		<br>
 		<div class="row">
 			<!-- start zoom -->
 			<div class="col-xs-12 col-sm-6 col-md-4 form-group">
@@ -482,10 +482,8 @@ require '../config.php';
 							?>
 						</ul> 
 					</div>
-				<div class="exzoom_nav"></div>
-        <!-- Nav Buttons -->
-
-        </div>
+					<div class="exzoom_nav"></div>
+        		</div>
 			</div>
 			<!-- end zoom -->
 			<div class="col-xs-12 col-sm-6 col-md-4 form-group">
