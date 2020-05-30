@@ -52,7 +52,8 @@ require '../config.php';
 	<link rel="stylesheet" href="../css/reset.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/style2.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+	<link rel="stylesheet" href="../css/responsive.css">
+	<link href="../css/jquery.exzoom.css" rel="stylesheet">
 
 	
 	
@@ -360,8 +361,8 @@ require '../config.php';
 					<div class="row">
 						<div class="col-lg-3">
 							<div class="all-category">
-								<h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>ປະພດສິນຄ້າ</h3>
-								<ul class="main-category">
+								<h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i><a href="../index.php">ໜ້າຫຼັກ</a></h3>
+								<!-- <ul class="main-category">
 									<?php 
 										$sqlcate = "select * from category order by cate_id asc;";
 										$resultcate = mysqli_query($link,$sqlcate);
@@ -384,7 +385,7 @@ require '../config.php';
 									<?php 
 										}
 									?>
-								</ul>
+								</ul> -->
 							</div>
 						</div>
 					</div>
@@ -396,7 +397,7 @@ require '../config.php';
 	<!--/ End Header -->
 	
 	<!-- Slider Area -->
-	<section class="hero-slider">
+	<!-- <section class="hero-slider">
 		<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
 				<?php 
@@ -445,62 +446,48 @@ require '../config.php';
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
-	</section>
+	</section> -->
 	<div class="clearfix"></div>
 
 	<div class="container font14" style="margin-top: -10px;">
 		<hr size="3" align="center" width="100%">
 		<div class="row">
+			<!-- start zoom -->
 			<div class="col-xs-12 col-sm-6 col-md-4 form-group">
-				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<?php 
-							$sqlcolors = "select * from product where pro_id='$pro_id';";
-							$resultcolors = mysqli_query($link,$sqlcolors);
-							$rowcolors = mysqli_fetch_array($resultcolors,MYSQLI_ASSOC);
-						?>
-						<li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $rowcolors['pro_id']; ?>" class="active"></li>
-						<?php 
-							$sqlcolor = "select * from product_model where pro_id='$pro_id' order by model_id;";
-							$resultcolor = mysqli_query($link,$sqlcolor);
-							while($rowcolor = mysqli_fetch_array($resultcolor,MYSQLI_ASSOC)){
-						?>
-						<li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $rowcolor['model_id']; ?>"></li>
-						<?php 
-							}
-						?>
-					</ol>
-					<div class="carousel-inner">
-						<?php 
-							$sqlcolors2 = "select * from product where pro_id='$pro_id';";
-							$resultcolors2 = mysqli_query($link,$sqlcolors2);
-							$rowcolors2 = mysqli_fetch_array($resultcolors2,MYSQLI_ASSOC);
-						?>
-						<div class="carousel-item active">
-							<img class="d-block w-100" src="../../GAME_GADGET_shop/image/<?php echo $rowcolors2['img_path']; ?>" width="100%" alt="">
-						</div>
-						<?php 
-							$sqlcolor2 = "select * from product_model where pro_id='$pro_id' order by model_id;";
-							$resultcolor2 = mysqli_query($link,$sqlcolor2);
-							while($rowcolor2 = mysqli_fetch_array($resultcolor2,MYSQLI_ASSOC)){
-						?>
-						<div class="carousel-item">
-							<img class="d-block w-100" src="../../GAME_GADGET_shop/image/<?php echo $rowcolor2['img_path']; ?>" width="100%" alt="">
-						</div>
-						<?php 
-							}
-						?>
+				<div class="exzoom" id="exzoom">
+					<!-- Images -->
+					<div class="exzoom_img_box">
+						<ul class='exzoom_img_ul'>
+							<?php
+							$sqlcolorss = "select * from product where pro_id='$pro_id';";
+							$resultcolorss = mysqli_query($link,$sqlcolorss);
+							$rowcolorss = mysqli_fetch_array($resultcolorss,MYSQLI_ASSOC);
+							?>
+								<li><img class="d-block w-100" src="../../GAME_GADGET_shop/image/<?php echo $rowcolorss['img_path']; ?>" width="100%" alt=""></li>
+							<?php
+								$sqlcolor2 = "select * from product_model where pro_id='$pro_id' order by model_id;";
+								$resultcolor2 = mysqli_query($link,$sqlcolor2);
+								while($rowcolor2 = mysqli_fetch_array($resultcolor2,MYSQLI_ASSOC)){
+							?>
+								<li><img class="d-block w-100" src="../../GAME_GADGET_shop/image/<?php echo $rowcolor2['img_path']; ?>" width="100%" alt=""></li>
+							<?php
+								}
+								$sqlcolorr2 = "select * from product_color where pro_id='$pro_id' order by color_name;";
+								$resultcolorr2 = mysqli_query($link,$sqlcolorr2);
+								while($rowcolorr2 = mysqli_fetch_array($resultcolorr2,MYSQLI_ASSOC)){
+							?>
+								<li><img class="d-block w-100" src="../../GAME_GADGET_shop/image/<?php echo $rowcolorr2['img_path']; ?>" width="100%" alt=""></li>
+							<?php
+								}
+							?>
+						</ul> 
 					</div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
+				<div class="exzoom_nav"></div>
+        <!-- Nav Buttons -->
+
+        </div>
 			</div>
+			<!-- end zoom -->
 			<div class="col-xs-12 col-sm-6 col-md-4 form-group">
 				<?php 
 					$sqlshow = "select p.pro_id,pro_name,brand_name,cated_name,cate_name,p.price,p.img_path,p.price-promotion as newprice,(promotion/p.price) * 100 as persen,p.promotion,p.type,p.guarantee  from product p left join categorydetail d on p.cated_id=d.cated_id left join brand b on p.brand_id=b.brand_id left join category c on d.cate_id=c.cate_id where pro_id='$pro_id';";
@@ -891,5 +878,14 @@ require '../config.php';
 	<script src="../js/easing.js"></script>
 	<!-- Active JS -->
 	<script src="../js/active.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="../js/jquery.exzoom.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#exzoom").exzoom({
+                "autoPlay": false,
+            });
+        });  
+    </script>
 </body>
 </html>
