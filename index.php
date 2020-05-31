@@ -135,7 +135,7 @@ require 'config.php';
 					<div class="col-lg-2 col-md-2 col-12">
 						<!-- Logo -->
                         <div class="logo">
-							<a href="index.php"><img src="../GAME_GADGET_shop/image/<?php echo $rowshop['img_path']; ?>" style="margin-top: -40px;" alt="" width="60%"></a>
+							<a href="index.php"><img src="../GAME_GADGET_shop/image/<?php echo $rowshop['img_path']; ?>" style="margin-top: -20px;" alt="" width="100px"></a>
 						</div>
 						<!--/ End Logo -->
 						<!-- Search Form -->

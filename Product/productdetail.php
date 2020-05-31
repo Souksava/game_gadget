@@ -368,8 +368,6 @@ require '../config.php';
 										$resultcate = mysqli_query($link,$sqlcate);
 										while($rowcate = mysqli_fetch_array($resultcate,MYSQLI_ASSOC)){
 									?>
-									<li><a href="#"><img src="../../GAME_GADGET_shop/image/<?php echo $rowcate['img_path']; ?>" width="15px;" alt=""> <?php echo $rowcate['cate_name']; ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-										<ul class="sub-category">
 											<?php 
 												$cate_id = $rowcate['cate_id'];
 												$sqlcatedetail = "select * from categorydetail where cate_id='$cate_id' order by cated_name asc;";
@@ -380,8 +378,6 @@ require '../config.php';
 											<?php 
 												}
 											?>
-										</ul>
-									</li>
 									<?php 
 										}
 									?>
