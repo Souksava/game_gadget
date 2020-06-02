@@ -1,6 +1,5 @@
 <?php 
 require 'config.php';
-require '../ConnectDB/connectDB.php';
 $helper = $fb->getRedirectLoginHelper();
 
 try {
@@ -74,6 +73,7 @@ try {
     exit;
   }
   $user = $response->getGraphUser();
+  require '../ConnectDB/connectDB.php';
   $fb_id = $user['id'];
   $fb_name = $user['name'];
   $fb_email = $user['email'];
@@ -85,5 +85,5 @@ try {
   }
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
-header('location: http://localhost/GAME_GADGET/index.php?login=true');
+header('location: http://gamegadgetlao.com/index.php?login=true');
 ?>

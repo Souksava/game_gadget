@@ -37,7 +37,7 @@ if(isset($_POST['btnDeli'])){
 	<!-- Title Tag  -->
     <title><?php echo $rowshop['name']; ?></title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="../../Game_GADGET_shop/image/<?php echo $rowshop['img_title']; ?>">
+	<link rel="icon" type="image/png" href="backend/image/<?php echo $rowshop['img_title']; ?>">
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 	
@@ -138,8 +138,8 @@ if(isset($_POST['btnDeli'])){
 				<div class="row">
                     <div class="col-lg-2 col-md-2 col-12">
 						<!-- Logo -->
-                        <div class="logo">
-							<a href="../index.php"><img src="../../GAME_GADGET_shop/image/<?php echo $rowshop['img_path']; ?>" style="margin-top: -40px;" alt="" width="60%"></a>
+                        <div class="logo"><br>
+							<a href="../index.php"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowshop['img_path']; ?>" style="margin-top: -40px;" alt="" width="60%"></a>
 						</div>
 						<!--/ End Logo -->
 						<!-- Search Form -->
@@ -259,7 +259,7 @@ if(isset($_POST['btnDeli'])){
                                                                                 while($rowcredit2 = mysqli_fetch_array($resultcredit2,MYSQLI_ASSOC)){
                                                                             ?>
                                                                                 <div class="col-md-12">
-                                                                                    <img src="../../GAME_GADGET_shop/image/<?php echo $rowcredit2['img_path']; ?>" alt="" style="width: 50px;height: 35px;">&nbsp;
+                                                                                    <img src="http://backend.gamegadgetlao.com/image/<?php echo $rowcredit2['img_path']; ?>" alt="" style="width: 50px;height: 35px;">&nbsp;
                                                                                     <b><?php echo $rowcredit2['card_id']; ?><br>  ຊື່ບັນຊີ: <?php echo $rowcredit2['ac_name']; ?> <br> ເລກບັນຊີ: <?php echo $rowcredit2['ac_no']; ?></b> <br><br>
                                                                                 </div>
                                                                             <?php 
@@ -481,7 +481,7 @@ if(isset($_POST['btnDeli'])){
                                                                                 while($rowcredit2 = mysqli_fetch_array($resultcredit2,MYSQLI_ASSOC)){
                                                                             ?>
                                                                                 <div class="col-md-12">
-                                                                                    <img src="../../GAME_GADGET_shop/image/<?php echo $rowcredit2['img_path']; ?>" alt="" style="width: 50px;height: 35px;">&nbsp;
+                                                                                    <img src="http://backend.gamegadgetlao.com/image/<?php echo $rowcredit2['img_path']; ?>" alt="" style="width: 50px;height: 35px;">&nbsp;
                                                                                     <b><?php echo $rowcredit2['card_id']; ?><br>  ຊື່ບັນຊີ: <?php echo $rowcredit2['ac_name']; ?> <br> ເລກບັນຊີ: <?php echo $rowcredit2['ac_no']; ?></b> <br><br>
                                                                                 </div>
                                                                             <?php 
@@ -684,7 +684,7 @@ if(isset($_POST['btnDeli'])){
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="../index.php"><img src="../../GAME_GADGET_shop/image/<?php echo $rowshop['img_path'] ?>" width="80px;" alt=""></a>
+								<a href="../index.php"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowshop['img_path'] ?>" width="80px;" alt=""></a>
 							</div>
 							<p class="text">ສະຖານທີ່ຕັ້ງ: <?php echo $rowshop['address'] ?></p>
 							<p class="call">ເບີໂທລະສັບຕິດຕໍ່: <span><a href="tel<?php echo $rowshop['tel'] ?>"><?php echo $rowshop['tel'] ?></a></span></p>
@@ -746,7 +746,7 @@ if(isset($_POST['btnDeli'])){
 								$resultcredit = mysqli_query($link,$sqlcredit);
 								while($rowcredit = mysqli_fetch_array($resultcredit,MYSQLI_ASSOC)){
 							?>
-								&nbsp;&nbsp;&nbsp; <img src="../../GAME_GADGET_shop/image/<?php echo $rowcredit['img_path'] ?>" width="30px;" alt="#">
+								&nbsp;&nbsp;&nbsp; <img src="http://backend.gamegadgetlao.com/image/<?php echo $rowcredit['img_path'] ?>" width="30px;" alt="#">
 							<?php 
                                 }
 							?>
@@ -787,7 +787,7 @@ if(isset($_POST['btnDeli'])){
                 else { 
                     $ext = pathinfo(basename($_FILES['img_path']['name']), PATHINFO_EXTENSION);
                     $new_image_name = 'img_'.uniqid().".".$ext;
-                    $image_path = "../../GAME_GADGET_shop/image/";
+                    $image_path = "http://backend.gamegadgetlao.com/image/";
                     $upload_path = $image_path.$new_image_name;
                     move_uploaded_file($_FILES['img_path']['tmp_name'], $upload_path);
                     $pro_image = $new_image_name;

@@ -21,7 +21,7 @@ require 'config.php';
 	<!-- Title Tag  -->
     <title><?php echo $rowshop['name']; ?></title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="../Game_GADGET_shop/image/<?php echo $rowshop['img_title']; ?>">
+	<link rel="icon" type="image/png" href="backend/image/<?php echo $rowshop['img_title']; ?>">
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 	
@@ -135,7 +135,7 @@ require 'config.php';
 					<div class="col-lg-2 col-md-2 col-12">
 						<!-- Logo -->
                         <div class="logo">
-							<a href="index.php"><img src="../GAME_GADGET_shop/image/<?php echo $rowshop['img_path']; ?>" style="margin-top: -20px;" alt="" width="100px"></a>
+							<a href="index.php"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowshop['img_path']; ?>" alt="" width="100px"></a>
 						</div>
 						<!--/ End Logo -->
 						<!-- Search Form -->
@@ -156,7 +156,7 @@ require 'config.php';
 					<div class="col-lg-8 col-md-7 col-12">
 						<div class="search-bar-top">
 							<div class="search-bar">
-								<form action="Search/search.php" method="GET" id="formserach">
+								<form action="Search/search.php" method="GET" id="formserach2">
 									<input name="id" placeholder="Product Name, Brand" type="search">
 									<button type="submit" class="btnn"><i class="ti-search"></i></button>
 								</form>
@@ -191,7 +191,7 @@ require 'config.php';
 										  while($rowlistfb = mysqli_fetch_array($resultlistfb,MYSQLI_ASSOC)){
 										?>
 										<li>
-											<a class="cart-img" href="#"><img src="../GAME_GADGET_shop/image/<?php echo $rowlistfb['img_path']; ?>" style="width: 70px;height:70px;" alt="#"></a>
+											<a class="cart-img" href="#"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowlistfb['img_path']; ?>" style="width: 70px;height:70px;" alt="#"></a>
 											<h4><a href="#"><?php echo $rowlistfb['cate_name']; ?> <?php echo $rowlistfb['brand_name']; ?> <?php echo $rowlistfb['pro_name']; ?> <?php echo $rowlistfb['cated_name']; ?></a></h4>
 											<p class="quantity"><?php echo $rowlistfb['qty']; ?>x - <span class="amount"><?php echo number_format($rowlistfb['total'],2); ?></span></p>
 										</li>
@@ -283,7 +283,7 @@ require 'config.php';
 										?>
 										<li>
 											
-											<a class="cart-img" href="#"><img src="../GAME_GADGET_shop/image/<?php echo $rowlistfb['img_path']; ?>" style="width: 70px;height:70px;" alt="#"></a>
+											<a class="cart-img" href="#"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowlistfb['img_path']; ?>" style="width: 70px;height:70px;" alt="#"></a>
 											<h4><a href="#"><?php echo $rowlistfb['cate_name']; ?> <?php echo $rowlistfb['brand_name']; ?> <?php echo $rowlistfb['pro_name']; ?> <?php echo $rowlistfb['cated_name']; ?></a></h4>
 											<p class="quantity"><?php echo $rowlistfb['qty']; ?>x - <span class="amount"><?php echo number_format($rowlistfb['total'],2); ?></span></p>
 										</li>
@@ -375,7 +375,7 @@ require 'config.php';
 										$resultcate = mysqli_query($link,$sqlcate);
 										while($rowcate = mysqli_fetch_array($resultcate,MYSQLI_ASSOC)){
 									?>
-									<li><a href="#"><img src="../GAME_GADGET_shop/image/<?php echo $rowcate['img_path']; ?>" width="15px;" alt=""> <?php echo $rowcate['cate_name']; ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									<li><a href="#"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowcate['img_path']; ?>" width="15px;" alt=""> <?php echo $rowcate['cate_name']; ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 										<ul class="sub-category">
 											<?php 
 												$cate_id = $rowcate['cate_id'];
@@ -404,7 +404,7 @@ require 'config.php';
 											<ul class="nav main-menu menu navbar-nav">
 													<li class="active"><a href="#">ໜ້າຫຼັກ</a></li>																		
 													<li><a href="Contact_us/contact_us.php">ຕິດຕໍ່ເຮົາ</a></li>
-												</ul>
+											</ul>
 										</div>
 									</div>
 								</nav>
@@ -455,7 +455,7 @@ require 'config.php';
 					$rowcolors2 = mysqli_fetch_array($resultcolors2,MYSQLI_ASSOC);
 				?>
 					<div class="carousel-item active">
-						<img class="d-block w-100" src="../../GAME_GADGET_shop/image/<?php echo $rowcolors2['img_path']; ?>" width="100%" alt="">
+						<img class="d-block w-100" src="http://backend.gamegadgetlao.com/image/<?php echo $rowcolors2['img_path']; ?>" width="100%" alt="">
 					</div>
 					<?php 
 						$sqlcolor2 = "select * from cover where id!='$i'";
@@ -463,7 +463,7 @@ require 'config.php';
 						while($rowcolor2 = mysqli_fetch_array($resultcolor2,MYSQLI_ASSOC)){
 				?>
 					<div class="carousel-item">
-						<img class="d-block w-100" src="../../GAME_GADGET_shop/image/<?php echo $rowcolor2['img_path']; ?>" width="100%" alt="">
+						<img class="d-block w-100" src="http://backend.gamegadgetlao.com/image/<?php echo $rowcolor2['img_path']; ?>" width="100%" alt="">
 					</div>
 				<?php 
 						}
@@ -501,8 +501,8 @@ require 'config.php';
 						<div class="single-product">
 							<div class="product-img">
 								<a href="Product/productdetail.php?id=<?php echo $rowshow['pro_id']; ?>">
-									<img class="default-img" src="../GAME_GADGET_shop/image/<?php echo $rowshow['img_path']; ?>" alt="">
-									<img class="hover-img" src="../GAME_GADGET_shop/image/<?php echo $rowshow['img_path']; ?>" alt="">
+									<img class="default-img" src="http://backend.gamegadgetlao.com/image/<?php echo $rowshow['img_path']; ?>" style="width:300px;height:280px;" alt="">
+									<img class="hover-img" src="http://backend.gamegadgetlao.com/image/<?php echo $rowshow['img_path']; ?>" style="width:300px;height:280px;" alt="">
 									<span class="out-of-stock">ຫຼຸດ <?php echo number_format($rowshow['persen'],2); ?>%</span>
 								</a>
 								<div class="button-head">
@@ -564,7 +564,7 @@ require 'config.php';
 									$resultbrand = mysqli_query($link,$sqlbrand);
 									while($rowbrand = mysqli_fetch_array($resultbrand,MYSQLI_ASSOC)){
 								?>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#<?php echo $rowbrand['brand_id'];?>" role="tab"><img src="../../GAME_GADGET_shop/image/<?php echo $rowbrand['bimg_path'];?>" width="50px" height="50px" alt="First slide"></a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#<?php echo $rowbrand['brand_id'];?>" role="tab"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowbrand['bimg_path'];?>" width="50px" height="50px" alt="First slide"></a></li>
 								<?php 
 									}
 								?>
@@ -590,8 +590,8 @@ require 'config.php';
 												<div class="single-product">
 													<div class="product-img">
 														<a href="Product/productdetail.php?id=<?php echo $rowprobrand['pro_id']; ?>">
-															<img class="default-img" src="../GAME_GADGET_shop/image/<?php echo $rowprobrand['img_path']; ?>" alt="#">
-															<img class="hover-img" src="../GAME_GADGET_shop/image/<?php echo $rowprobrand['img_path']; ?>" alt="#">
+															<img class="default-img" src="http://backend.gamegadgetlao.com/image/<?php echo $rowprobrand['img_path']; ?>" style="width:300px;height:280px;" alt="#">
+															<img class="hover-img" src="http://backend.gamegadgetlao.com/image/<?php echo $rowprobrand['img_path']; ?>" style="width:300px;height:280px;" alt="#">
 															<?php 
 																if($rowprobrand['promotion'] != 0){
 																	echo"<span class='out-of-stock'>ຫຼຸດ ".number_format($rowprobrand['persen'],2)."%</span>";
@@ -684,8 +684,8 @@ require 'config.php';
 						<div class="single-product">
 							<div class="product-img">
 								<a href="Product/productdetail.php?id=<?php echo $rowshow2['pro_id']; ?>">
-									<img class="default-img" src="../GAME_GADGET_shop/image/<?php echo $rowshow2['img_path']; ?>" alt="">
-									<img class="hover-img" src="../GAME_GADGET_shop/image/<?php echo $rowshow2['img_path']; ?>" alt="">
+									<img class="default-img" src="http://backend.gamegadgetlao.com/image/<?php echo $rowshow2['img_path']; ?>" style="width:300px;height:280px;" alt="">
+									<img class="hover-img" src="http://backend.gamegadgetlao.com/image/<?php echo $rowshow2['img_path']; ?>" style="width:300px;height:280px;" alt="">
 									<span class="out-of-stock">ມາແຮງ</span>
 								</a>
 								<div class="button-head">
@@ -762,7 +762,7 @@ require 'config.php';
 						?>
 							<div class="col-lg-6 col-md-6 col-12">
 								<div class="list-image overlay">
-									<img src="../GAME_GADGET_shop/image/<?php echo $rowsale['img_path']; ?>" alt="">
+									<img src="http://backend.gamegadgetlao.com/image/<?php echo $rowsale['img_path']; ?>" style="width:230px;height:200px;" alt="">
 									<a href="Basket/basket.php?product=<?php echo $rowsale['pro_id']; ?>" class="buy"><i class="fa fa-shopping-bag"></i></a>
 								</div>
 							</div>
@@ -800,7 +800,7 @@ require 'config.php';
 						?>
 							<div class="col-lg-6 col-md-6 col-12">
 								<div class="list-image overlay">
-									<img src="../GAME_GADGET_shop/image/<?php echo $rowbest['img_path']; ?>" alt="">
+									<img src="http://backend.gamegadgetlao.com/image/<?php echo $rowbest['img_path']; ?>" style="width:230px;height:200px;" alt="">
 									<a href="Basket/basket.php?product=<?php echo $rowbest['pro_id']; ?>" class="buy"><i class="fa fa-shopping-bag"></i></a>
 								</div>
 							</div>
@@ -845,7 +845,7 @@ require 'config.php';
 						?>
 							<div class="col-lg-6 col-md-6 col-12">
 								<div class="list-image overlay">
-									<img src="../GAME_GADGET_shop/image/<?php echo $rowtop['img_path']; ?>" alt="">
+									<img src="http://backend.gamegadgetlao.com/image/<?php echo $rowtop['img_path']; ?>" style="width:230px;height:200px;" alt="">
 									<a href="Basket/basket.php?product=<?php echo $rowtop['pro_id']; ?>" class="buy"><i class="fa fa-shopping-bag"></i></a>
 								</div>
 							</div>
@@ -931,7 +931,7 @@ require 'config.php';
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="index.php"><img src="../GAME_GADGET_shop/image/<?php echo $rowshop['img_path'] ?>" width="80px;" alt="#"></a>
+								<a href="index.php"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowshop['img_title'] ?>" width="80px;" alt="#"></a>
 							</div>
 							<p class="text">ສະຖານທີ່ຕັ້ງ: <?php echo $rowshop['address'] ?></p>
 							<p class="call">ເບີໂທລະສັບຕິດຕໍ່: <span><a href="tel<?php echo $rowshop['tel'] ?>"><?php echo $rowshop['tel'] ?></a></span></p>
@@ -991,7 +991,7 @@ require 'config.php';
 								$resultcredit = mysqli_query($link,$sqlcredit);
 								while($rowcredit = mysqli_fetch_array($resultcredit,MYSQLI_ASSOC)){
 							?>
-								&nbsp;&nbsp;&nbsp; <img src="../GAME_GADGET_shop/image/<?php echo $rowcredit['img_path'] ?>" width="30px;" alt="#">
+								&nbsp;&nbsp;&nbsp; <img src="http://backend.gamegadgetlao.com/image/<?php echo $rowcredit['img_path'] ?>" width="30px;" alt="#">
 							<?php 
 								}
 							?>

@@ -21,7 +21,7 @@ require '../config.php';
 	<!-- Title Tag  -->
     <title><?php echo $rowshop['name']; ?></title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="../../Game_GADGET_shop/image/<?php echo $rowshop['img_title']; ?>">
+	<link rel="icon" type="image/png" href="backend/image/<?php echo $rowshop['img_title']; ?>">
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 	
@@ -49,16 +49,17 @@ require '../config.php';
     <link rel="stylesheet" href="../css/slicknav.min.css">
 	
 	<!-- Eshop StyleSheet -->
-	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/reset2.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/style2.css">
 	<link rel="stylesheet" href="../css/responsive.css">
-	<link href="../css/jquery.exzoom.css" rel="stylesheet">
-
-	
-	
+	<link rel="stylesheet" href="../css/jquery.wm-zoom-1.0.min.css">
+	<style>
+		#imagel{
+			width: 100%;}
+	</style>	
 </head>
-<body class="js">
+<body >
 	<?php 
 	if(isset($_GET['id'])){
 		$pro_id = $_GET['id'];
@@ -129,7 +130,7 @@ require '../config.php';
 					<div class="col-lg-2 col-md-2 col-12">
 						<!-- Logo -->
                         <div class="logo">
-							<a href="../index.php"><img src="../../GAME_GADGET_shop/image/<?php echo $rowshop['img_path']; ?>" style="margin-top: -40px;" alt="" width="60%"></a>
+							<a href="../index.php"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowshop['img_path']; ?>" alt="" width="60%"></a>
 						</div>
 						<!--/ End Logo -->
 						<!-- Search Form -->
@@ -185,7 +186,7 @@ require '../config.php';
 										  while($rowlistfb = mysqli_fetch_array($resultlistfb,MYSQLI_ASSOC)){
 										?>
 										<li>
-											<a class="cart-img" href="#"><img src="../../GAME_GADGET_shop/image/<?php echo $rowlistfb['img_path']; ?>" style="width: 70px;height:70px;" alt="#"></a>
+											<a class="cart-img" href="#"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowlistfb['img_path']; ?>" style="width: 70px;height:70px;" alt="#"></a>
 											<h4><a href="#"><?php echo $rowlistfb['cate_name']; ?> <?php echo $rowlistfb['brand_name']; ?> <?php echo $rowlistfb['pro_name']; ?> <?php echo $rowlistfb['cated_name']; ?></a></h4>
 											<p class="quantity"><?php echo $rowlistfb['qty']; ?>x - <span class="amount"><?php echo number_format($rowlistfb['total'],2); ?></span></p>
 										</li>
@@ -276,7 +277,7 @@ require '../config.php';
 										  while($rowlistfb = mysqli_fetch_array($resultlistfb,MYSQLI_ASSOC)){
 										?>
 										<li>
-											<a class="cart-img" href="#"><img src="../../GAME_GADGET_shop/image/<?php echo $rowlistfb['img_path']; ?>" style="width: 70px;height:70px;" alt="#"></a>
+											<a class="cart-img" href="#"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowlistfb['img_path']; ?>" style="width: 70px;height:70px;" alt="#"></a>
 											<h4><a href="#"><?php echo $rowlistfb['cate_name']; ?> <?php echo $rowlistfb['brand_name']; ?> <?php echo $rowlistfb['pro_name']; ?> <?php echo $rowlistfb['cated_name']; ?></a></h4>
 											<p class="quantity"><?php echo $rowlistfb['qty']; ?>x - <span class="amount"><?php echo number_format($rowlistfb['total'],2); ?></span></p>
 										</li>
@@ -368,6 +369,8 @@ require '../config.php';
 										$resultcate = mysqli_query($link,$sqlcate);
 										while($rowcate = mysqli_fetch_array($resultcate,MYSQLI_ASSOC)){
 									?>
+									<li><a href="#"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowcate['img_path']; ?>" width="15px;" alt=""> <?php echo $rowcate['cate_name']; ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+										<ul class="sub-category">
 											<?php 
 												$cate_id = $rowcate['cate_id'];
 												$sqlcatedetail = "select * from categorydetail where cate_id='$cate_id' order by cated_name asc;";
@@ -378,6 +381,8 @@ require '../config.php';
 											<?php 
 												}
 											?>
+										</ul>
+									</li>
 									<?php 
 										}
 									?>
@@ -419,7 +424,7 @@ require '../config.php';
 					$rowcolorss2 = mysqli_fetch_array($resultcolorss2,MYSQLI_ASSOC);
 				?>
 				<div class="carousel-item active">
-					<img class="d-block w-100" src="../../GAME_GADGET_shop/image/<?php echo $rowcolorss2['img_path']; ?>" width="100%" alt="">
+					<img class="d-block w-100" src="http://backend.gamegadgetlao.com/image/<?php echo $rowcolorss2['img_path']; ?>" width="100%" alt="">
 				</div>
 				<?php 
 					$sqlcolorr2 = "select * from product_color where pro_id='$pro_id' order by color_name;";
@@ -427,7 +432,7 @@ require '../config.php';
 					while($rowcolorr2 = mysqli_fetch_array($resultcolorr2,MYSQLI_ASSOC)){
 				?>
 				<div class="carousel-item">
-					<img class="d-block w-100" src="../../GAME_GADGET_shop/image/<?php echo $rowcolorr2['img_path']; ?>" width="100%" alt="">
+					<img class="d-block w-100" src="http://backend.gamegadgetlao.com/image/<?php echo $rowcolorr2['img_path']; ?>" width="100%" alt="">
 				</div>
 				<?php 
 					}
@@ -449,37 +454,17 @@ require '../config.php';
 		<br>
 		<div class="row">
 			<!-- start zoom -->
-			<div class="col-xs-12 col-sm-6 col-md-4 form-group">
-				<div class="exzoom" id="exzoom">
-					<!-- Images -->
-					<div class="exzoom_img_box">
-						<ul class='exzoom_img_ul'>
-							<?php
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="wm-zoom-container my-zoom-1">
+					<div class="wm-zoom-box">
+						<?php 
 							$sqlcolorss = "select * from product where pro_id='$pro_id';";
 							$resultcolorss = mysqli_query($link,$sqlcolorss);
 							$rowcolorss = mysqli_fetch_array($resultcolorss,MYSQLI_ASSOC);
-							?>
-								<li><img class="d-block w-100" src="../../GAME_GADGET_shop/image/<?php echo $rowcolorss['img_path']; ?>" width="100%" alt=""></li>
-							<?php
-								$sqlcolor2 = "select * from product_model where pro_id='$pro_id' order by model_id;";
-								$resultcolor2 = mysqli_query($link,$sqlcolor2);
-								while($rowcolor2 = mysqli_fetch_array($resultcolor2,MYSQLI_ASSOC)){
-							?>
-								<li><img class="d-block w-100" src="../../GAME_GADGET_shop/image/<?php echo $rowcolor2['img_path']; ?>" width="100%" alt=""></li>
-							<?php
-								}
-								$sqlcolorr2 = "select * from product_color where pro_id='$pro_id' order by color_name;";
-								$resultcolorr2 = mysqli_query($link,$sqlcolorr2);
-								while($rowcolorr2 = mysqli_fetch_array($resultcolorr2,MYSQLI_ASSOC)){
-							?>
-								<li><img class="d-block w-100" src="../../GAME_GADGET_shop/image/<?php echo $rowcolorr2['img_path']; ?>" width="100%" alt=""></li>
-							<?php
-								}
-							?>
-						</ul> 
+						?>
+							<img id="imagel" src="http://backend.gamegadgetlao.com/image/<?php echo $rowcolorss['img_path']; ?>" class="wm-zoom-default-img" data-hight-src="http://backend.gamegadgetlao.com/image/<?php echo $rowcolorss['img_path']; ?>" data-loader-src="../image/loader.gif" alt="test">
 					</div>
-					<div class="exzoom_nav"></div>
-        		</div>
+				</div>
 			</div>
 			<!-- end zoom -->
 			<div class="col-xs-12 col-sm-6 col-md-4 form-group">
@@ -505,7 +490,7 @@ require '../config.php';
 				</div>
 				<div style="margin-top: -30px;">
 					<label style="color: #7E7C7C;">ລະຫັດສິນຄ້າ: <?php echo $rowshow['pro_id']; ?></label><br>			
-					<h4 class="price with-discount" style="color: #CE3131;"><?php echo number_format($rowshow['newprice'],2); ?> ກີບ</h4>
+					<h4 class="price with-discount" style="color: #CE3131;font-family: 'Noto Sans Lao UI';"><?php echo number_format($rowshow['newprice'],2); ?> ກີບ</h4>
 					<span class="old" style="color: #7E7C7C;"><s>ປົກກະຕິ <?php echo number_format($rowshow['price'],2); ?> ກີບ</s></span><br>
 				</div>
 				<?php 
@@ -578,7 +563,7 @@ require '../config.php';
 							<!--/ End Input Order -->
 						</div>
 						<div class="add-to-cart">
-							<button type="submit" name="btnAdd" class="btn" style="font-family: 'Noto Sans Lao,Arial';">ເພີ່ມລົງກະຕ່າ</button>
+							<button type="submit" name="btnAdd" class="btn" style="font-family: 'Noto Sans Lao,Arial';z-index: 1;">ເພີ່ມລົງກະຕ່າ</button>
 						</div>
 					</div>
 				</form>
@@ -623,8 +608,8 @@ require '../config.php';
 					<p>
 						<?php echo $rowpro['content'] ?>
 					</p><br>
-					<a href="../../GAME_GADGET_shop/image/<?php echo $rowpro['img_path'] ?>">
-                        <img src="../../GAME_GADGET_shop/image/<?php echo $rowpro['img_path'] ?>" width="100%" class="card-img-top" alt=""><br>
+					<a href="http://backend.gamegadgetlao.com/image/<?php echo $rowpro['img_path'] ?>">
+                        <img src="http://backend.gamegadgetlao.com/image/<?php echo $rowpro['img_path'] ?>" width="100%" class="card-img-top" alt=""><br>
 					</a>
 				<?php 
 					}
@@ -763,7 +748,7 @@ require '../config.php';
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="index.html"><img src="../../GAME_GADGET_shop/image/<?php echo $rowshop['img_path'] ?>" width="80px;" alt="#"></a>
+								<a href="index.html"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowshop['img_path'] ?>" width="80px;" alt="#"></a>
 							</div>
 							<p class="text">ສະຖານທີ່ຕັ້ງ: <?php echo $rowshop['address'] ?></p>
 							<p class="call">ເບີໂທລະສັບຕິດຕໍ່: <span><a href="tel<?php echo $rowshop['tel'] ?>"><?php echo $rowshop['tel'] ?></a></span></p>
@@ -825,7 +810,7 @@ require '../config.php';
 								$resultcredit = mysqli_query($link,$sqlcredit);
 								while($rowcredit = mysqli_fetch_array($resultcredit,MYSQLI_ASSOC)){
 							?>
-								&nbsp;&nbsp;&nbsp; <img src="../../GAME_GADGET_shop/image/<?php echo $rowcredit['img_path'] ?>" width="30px;" alt="#">
+								&nbsp;&nbsp;&nbsp; <img src="http://backend.gamegadgetlao.com/image/<?php echo $rowcredit['img_path'] ?>" width="30px;" alt="#">
 							<?php 
 								}
 							?>
@@ -872,14 +857,17 @@ require '../config.php';
 	<script src="../js/easing.js"></script>
 	<!-- Active JS -->
 	<script src="../js/active.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="../js/jquery.exzoom.js"></script>
+
+	<script src="../js/jquery-1.11.1.js"></script>
+
+	<script src="../js/jquery.wm-zoom-1.0.min.js"></script>
     <script type="text/javascript">
-        $(function(){
-            $("#exzoom").exzoom({
-                "autoPlay": false,
-            });
-        });  
+         $(document).ready(function(){
+			$('.my-zoom-1').WMZoom();
+			$('.my-zoom-2 ').WMZoom({
+				config : {inner : true}
+			});
+		 });
     </script>
 </body>
 </html>

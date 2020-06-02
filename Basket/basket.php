@@ -30,7 +30,7 @@ require '../Login/config.php';
 	<!-- Title Tag  -->
     <title><?php echo $rowshop['name']; ?></title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="../../Game_GADGET_shop/image/<?php echo $rowshop['img_title']; ?>">
+	<link rel="icon" type="image/png" href="../backend/image/<?php echo $rowshop['img_title']; ?>">
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 	
@@ -132,7 +132,7 @@ require '../Login/config.php';
                     <div class="col-lg-2 col-md-2 col-12">
 						<!-- Logo -->
                         <div class="logo">
-							<a href="../index.php"><img src="../../GAME_GADGET_shop/image/<?php echo $rowshop['img_path']; ?>" style="margin-top: -40px;" alt="" width="60%"></a>
+							<a href="../index.php"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowshop['img_path']; ?>" alt="" width="60%"></a>
 						</div>
 						<!--/ End Logo -->
 						<!-- Search Form -->
@@ -307,7 +307,7 @@ require '../Login/config.php';
                           while($rowlistfb = mysqli_fetch_array($resultlistfb,MYSQLI_ASSOC)){
                         ?>
                         <tr>
-                            <th scope="row" ><img src="../../GAME_GADGET_shop/image/<?php echo $rowlistfb['img_path'] ?>" alt="" style="width: 100px;heigt: 100px;"></th>
+                            <th scope="row" ><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowlistfb['img_path'] ?>" alt="" style="width: 100px;heigt: 100px;"></th>
                             <td> <?php echo $rowlistfb['cate_name']; ?>  <?php echo $rowlistfb['brand_name']; ?>  <?php echo $rowlistfb['pro_name']; ?> <?php echo $rowlistfb['cated_name']; ?></td>
                             <td> 
                                 <?php echo $rowlistfb['qty']; ?> <?php echo $rowlistfb['unit_name']; ?><br>
@@ -471,7 +471,7 @@ require '../Login/config.php';
                           while($rowlistfb = mysqli_fetch_array($resultlistfb,MYSQLI_ASSOC)){
                         ?>
                         <tr>
-                            <th scope="row" ><img src="../../GAME_GADGET_shop/image/<?php echo $rowlistfb['img_path'] ?>" alt="" style="width: 100px;heigt: 100px;"></th>
+                            <th scope="row" ><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowlistfb['img_path'] ?>" alt="" style="width: 100px;heigt: 100px;"></th>
                             <td> <?php echo $rowlistfb['cate_name']; ?>  <?php echo $rowlistfb['brand_name']; ?>  <?php echo $rowlistfb['pro_name']; ?> <?php echo $rowlistfb['cated_name']; ?></td>
                             <td> 
                                 <?php echo $rowlistfb['qty']; ?> <?php echo $rowlistfb['unit_name']; ?><br>
@@ -616,7 +616,7 @@ require '../Login/config.php';
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="../index.php"><img src="../../GAME_GADGET_shop/image/<?php echo $rowshop['img_path'] ?>" width="80px;" alt=""></a>
+								<a href="../index.php"><img src="http://backend.gamegadgetlao.com/image/<?php echo $rowshop['img_path'] ?>" width="80px;" alt=""></a>
 							</div>
 							<p class="text">ສະຖານທີ່ຕັ້ງ: <?php echo $rowshop['address'] ?></p>
 							<p class="call">ເບີໂທລະສັບຕິດຕໍ່: <span><a href="tel<?php echo $rowshop['tel'] ?>"><?php echo $rowshop['tel'] ?></a></span></p>
@@ -678,7 +678,7 @@ require '../Login/config.php';
 								$resultcredit = mysqli_query($link,$sqlcredit);
 								while($rowcredit = mysqli_fetch_array($resultcredit,MYSQLI_ASSOC)){
 							?>
-								&nbsp;&nbsp;&nbsp; <img src="../../GAME_GADGET_shop/image/<?php echo $rowcredit['img_path'] ?>" width="30px;" alt="#">
+								&nbsp;&nbsp;&nbsp; <img src="http://backend.gamegadgetlao.com/image/<?php echo $rowcredit['img_path'] ?>" width="30px;" alt="#">
 							<?php 
                                 }
                                 if(isset($_GET['email'])=='not'){
